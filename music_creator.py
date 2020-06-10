@@ -13,6 +13,7 @@ audio = sound.Sound()
 done = False
 x = 10
 w = 10
+print("click to add a note\nfrequency is mouse y position\npress the space bar to save and play song")
 
 while not done:
     pygame.display.update()

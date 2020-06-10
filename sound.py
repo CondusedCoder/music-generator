@@ -24,7 +24,9 @@ class Sound:
             self.sound_arr.append(volume * math.sin(2* math.pi * freq * (x / sample_rate)))
         
 
-    def save_wav(file_name):
+    def save_wav(file_name, directory):
+        os.chdir(directory)
+        
         print("saving...")
 
         wav_file=wave.open(file_name, "w")

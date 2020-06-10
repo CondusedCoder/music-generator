@@ -4,9 +4,10 @@ import wave
 import struct
 
 class Sound:
-    def __init__(self, sample_rate_param):
+    def __init__(self):
         self.sound_arr = []
-        self.sample_rate = sample_rate_param
+        self.sample_rate = 44100.0
+        
 
     def append_silence(duration_milliseconds):
         num_samples = duration_milliseconds * (sample_rate / 1000.0)
@@ -26,7 +27,7 @@ class Sound:
 
     def save_wav(file_name, directory):
         os.chdir(directory)
-        
+
         print("saving...")
 
         wav_file=wave.open(file_name, "w")

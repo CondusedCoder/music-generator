@@ -3,33 +3,32 @@ import os
 import wave
 import math
 import struct
+import pygame
+
+screen = pygame.display.set_mode((1000, 100))
 
 audio = sound.Sound()
 sound_file_name = ""
 
+done = False
+x = 10
+w = 10
 
-while True:
-    freq = int(input("frequency: "))
-    length = int(input("sound length: "))
-    volume = int(input("volume (between 0 and 1): "))
-    silence_length = int(input("silence length: "))
-    audio.append_sinewav(freq, length, volume)
-    audio.append_silence(silence_length)
-    i = input("")
-    if i == "save sound":
+while not done:
+    pygame.display.update()
+
+    events = pygame.event.get()
+    for event in events:
+        if event.type == pygame.QUIT:
+            done = True
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            _, mouse_y = pygame.mouse.get_pos()
+            pygame.draw.rect(screen, (0,255,0), [x, mouse_y, 10, w])
+            x += w
+            
         
 
-        file_name = input("file_name: ")
-        directory = input("directory: ")
-        audio.save_wav(file_name, directory)
-        sound_file_name = file_name
-
-
-
-
-        break
-
-os.system(sound_file_name)
+#os.system(sound_file_name)
 
 
 

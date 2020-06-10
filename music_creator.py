@@ -8,7 +8,7 @@ import pygame
 screen = pygame.display.set_mode((1000, 100))
 
 audio = sound.Sound()
-sound_file_name = ""
+
 
 done = False
 x = 10
@@ -25,10 +25,19 @@ while not done:
             _, mouse_y = pygame.mouse.get_pos()
             pygame.draw.rect(screen, (0,255,0), [x, mouse_y, 10, w])
             x += w
-            
-        
+            audio.append_sinewav(mouse_y*10, 100, 1)
+            audio.append_silence(100)
+        if event.type == pygame.KEYDOWN:
 
-#os.system(sound_file_name)
+            if event.key == pygame.K_SPACE:
+                done = True
+                
+
+file_name = input("filename: ")
+directory = input("directory: ")
+audio.save_wav(file_name, directory)
+os.system(file_name)
+
 
 
 

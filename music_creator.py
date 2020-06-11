@@ -31,6 +31,9 @@ if custom == "y":
 else:
     color = (200, 255, 255)
 
+volume = float(input("volume(0 -> 1): "))
+if volume > 1 or volume < 0:
+    volume = 1
 
 screen = pygame.display.set_mode((1000, 100))
 pygame.display.set_caption("music creator")
@@ -80,7 +83,7 @@ while not done:
                 for n in reversed(notes):
 
                 
-                    audio.append_sinewav(n[1]*10, 100, 1)
+                    audio.append_sinewav(n[1]*10, 100, volume)
                     audio.append_silence(100)
 
                 done = True

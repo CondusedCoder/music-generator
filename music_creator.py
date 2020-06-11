@@ -8,7 +8,7 @@ import struct
 import pygame
 
 
-print("How to use:\nmove mouse up and down to change frequency,\nclick to add a note with that frequency,\nright click to remove a note,\npress the s key to save,\npress space bar to play")
+print("How to use:\nmove mouse up and down to change frequency,\nclick to add a note with that frequency,\nright click to remove a note,\npress the s key to save,\npress space bar to play,\npress c to clear all notes")
 
 
 audio = sound.Sound()
@@ -89,7 +89,7 @@ while not done:
             if event.key == pygame.K_c:
                 notes = []
                 x = 10
-                
+
                 
     for n in notes:
         pygame.draw.rect(screen, color, n)

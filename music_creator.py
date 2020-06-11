@@ -86,6 +86,9 @@ while not done:
                 
                 audio.save_wav("song.wav", str(os.getcwd()))
                 os.system("song.wav")
+            if event.key == pygame.K_c:
+                notes = []
+                x = 10
                 
                 
     for n in notes:

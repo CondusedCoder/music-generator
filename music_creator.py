@@ -44,6 +44,11 @@ while not done:
             quit()
 
         if event.type == pygame.MOUSEBUTTONDOWN:
+            try:
+                os.remove("song.wav")
+            except:
+                pass
+
             if event.button == 1:
 
                 _, mouse_y = pygame.mouse.get_pos()
@@ -72,7 +77,16 @@ while not done:
 
                 done = True
                 
+            if event.key == pygame.K_SPACE:
+                for n in reversed(notes):
 
+                
+                    audio.append_sinewav(n[1]*10, 100, 1)
+                    audio.append_silence(100)
+                
+                audio.save_wav("song.wav", str(os.getcwd()))
+                os.system("song.wav")
+                
                 
     for n in notes:
         pygame.draw.rect(screen, color, n)

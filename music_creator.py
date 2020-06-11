@@ -56,12 +56,13 @@ while not done:
 
             
                 
-
+       
         if event.type == pygame.KEYDOWN:
             
             if event.key == pygame.K_s:
                 for n in reversed(notes):
 
+                
                     audio.append_sinewav(n[1]*10, 100, 1)
                     audio.append_silence(100)
 
@@ -73,6 +74,7 @@ while not done:
         pygame.draw.rect(screen, color, n)
 
 
+
         
             
 pygame.quit()
@@ -81,10 +83,3 @@ file_name = input("filename: ")
 directory = input("directory: ")
 audio.save_wav(file_name, directory)
 os.system(file_name)
-
-
-
-
-
-
-

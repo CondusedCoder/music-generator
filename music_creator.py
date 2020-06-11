@@ -100,4 +100,4 @@ pygame.quit()
 file_name = input("filename: ")
 directory = input("directory: ")
 audio.save_wav(file_name, directory)
-os.system(file_name)
+

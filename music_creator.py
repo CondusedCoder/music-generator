@@ -7,13 +7,15 @@ import math
 import struct
 import pygame
 
+def mapp(n, start1, stop1, start2, stop2):
+    return ((n-start1)/(stop1-start1)) * (stop2-start2)+start2
+
 def print_how_to_use():
 
     print("How to use:\nmove mouse up and down to change frequency,\nclick to add a note with that frequency,\nright click to remove a note,\npress the s key to save,\npress space bar to play,\npress d to delete all notes,\npress c to see controls")
     print("\n\n\n\n")
 
 print_how_to_use()
-
 
 audio = sound.Sound()
 notes = []
@@ -83,7 +85,7 @@ while not done:
                 for n in reversed(notes):
 
                 
-                    audio.append_sinewav(n[1]*10, 100, volume)
+                    audio.append_sinewav(mapp(n[1])*10, 100, volume)
                     audio.append_silence(100)
 
                 done = True
@@ -92,7 +94,7 @@ while not done:
                 for n in reversed(notes):
 
                 
-                    audio.append_sinewav(n[1]*10, 100, 1)
+                    audio.append_sinewav(mapp(n[1],0,100,100,0)*10, 100, 1)
                     audio.append_silence(100)
                 
                 audio.save_wav("song.wav", str(os.getcwd()))

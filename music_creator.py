@@ -8,7 +8,7 @@ import struct
 import pygame
 
 
-print("How to use:\nmove mouse up and down to change frequency,\nclick to add a note with that frequency,\nright click to remove a note,\npress the s key to save")
+print("How to use:\nmove mouse up and down to change frequency,\nclick to add a note with that frequency,\nright click to remove a note,\npress the s key to save,\npress space bar to play")
 
 
 audio = sound.Sound()

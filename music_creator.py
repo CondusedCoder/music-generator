@@ -7,8 +7,12 @@ import math
 import struct
 import pygame
 
+def print_how_to_use():
 
-print("How to use:\nmove mouse up and down to change frequency,\nclick to add a note with that frequency,\nright click to remove a note,\npress the s key to save,\npress space bar to play,\npress d to delete all notes")
+    print("How to use:\nmove mouse up and down to change frequency,\nclick to add a note with that frequency,\nright click to remove a note,\npress the s key to save,\npress space bar to play,\npress d to delete all notes,\npress c to see controls")
+    print("\n\n\n\n")
+    
+print_how_to_use()
 
 
 audio = sound.Sound()
@@ -89,6 +93,8 @@ while not done:
             if event.key == pygame.K_d:
                 notes = []
                 x = 10
+            if event.key == pygame.K_c:
+                print_how_to_use()
 
                 
     for n in notes:

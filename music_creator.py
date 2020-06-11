@@ -28,7 +28,7 @@ while not done:
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             _, mouse_y = pygame.mouse.get_pos()
-            pygame.draw.rect(screen, (200,255,255), [x, mouse_y, 10, w])
+            pygame.draw.rect(screen, (200,255,255), [x, mouse_y, w, 5])
             x += w
             audio.append_sinewav(mouse_y*10, 100, 1)
             audio.append_silence(100)

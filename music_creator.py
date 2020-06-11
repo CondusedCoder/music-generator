@@ -6,6 +6,9 @@ import struct
 import pygame
 
 screen = pygame.display.set_mode((1000, 100))
+pygame.display.set_caption("music creator")
+icon = pygame.image.load("D:\Coding Files\python projects\music creator\images\icon.png")
+pygame.display.set_icon(icon)
 
 audio = sound.Sound()
 

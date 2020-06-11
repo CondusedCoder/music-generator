@@ -29,6 +29,8 @@ pygame.display.set_caption("music creator")
 icon = pygame.image.load("D:\Coding Files\python projects\music creator\images\icon.png")
 pygame.display.set_icon(icon)
 while not done:
+    
+
     pygame.display.update()
     screen.fill([20,20,20])
 
@@ -57,7 +59,7 @@ while not done:
 
         if event.type == pygame.KEYDOWN:
             
-            if event.key == pygame.K_SPACE:
+            if event.key == pygame.K_s:
                 for n in reversed(notes):
 
                     audio.append_sinewav(n[1]*10, 100, 1)

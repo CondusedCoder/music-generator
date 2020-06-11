@@ -5,19 +5,29 @@ import math
 import struct
 import pygame
 
-screen = pygame.display.set_mode((1000, 100))
-pygame.display.set_caption("music creator")
-icon = pygame.image.load("D:\Coding Files\python projects\music creator\images\icon.png")
-pygame.display.set_icon(icon)
+
 
 audio = sound.Sound()
 notes = []
-
+note_color = ()
 
 done = False
 x = 10
 w = 10
+custom = input("do you want to customize note color(y/n): ")
+if custom == "y":
+    r = int(input("r: "))
+    g = int(input("g: "))
+    b = int(input("b: "))
+    color = (r,g,b)
+else:
+    color = (200, 255, 255)
 
+
+screen = pygame.display.set_mode((1000, 100))
+pygame.display.set_caption("music creator")
+icon = pygame.image.load("D:\Coding Files\python projects\music creator\images\icon.png")
+pygame.display.set_icon(icon)
 while not done:
     pygame.display.update()
     screen.fill([20,20,20])
@@ -58,7 +68,7 @@ while not done:
 
                 
     for n in notes:
-        pygame.draw.rect(screen, (200,255,255), n)
+        pygame.draw.rect(screen, color, n)
 
 
         

@@ -8,7 +8,7 @@ import struct
 import pygame
 
 
-print("How to use:\nmove mouse up and down to change frequency,\nclick to add a note with that frequency,\nright click to remove a note,\npress the s key to save,\npress space bar to play,\npress c to clear all notes")
+print("How to use:\nmove mouse up and down to change frequency,\nclick to add a note with that frequency,\nright click to remove a note,\npress the s key to save,\npress space bar to play,\npress d to delete all notes")
 
 
 audio = sound.Sound()
@@ -86,7 +86,7 @@ while not done:
                 
                 audio.save_wav("song.wav", str(os.getcwd()))
                 os.system("song.wav")
-            if event.key == pygame.K_c:
+            if event.key == pygame.K_d:
                 notes = []
                 x = 10
 

@@ -6,6 +6,8 @@ import struct
 import pygame
 
 
+print("How to use:\nmove mouse up and down to change frequency,\nclick to add a note with that frequency,\nright click to remove a note,\npress the s key to save")
+
 
 audio = sound.Sound()
 notes = []

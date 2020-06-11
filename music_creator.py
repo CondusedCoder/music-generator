@@ -1,5 +1,7 @@
 import sound
 import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+
 import wave
 import math
 import struct

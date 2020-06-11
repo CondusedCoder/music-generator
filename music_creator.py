@@ -9,7 +9,7 @@ screen = pygame.display.set_mode((1000, 100))
 pygame.display.set_caption("music creator")
 icon = pygame.image.load("D:\Coding Files\python projects\music creator\images\icon.png")
 pygame.display.set_icon(icon)
-
+screen.fill([20,20,20])
 audio = sound.Sound()
 
 
@@ -19,6 +19,7 @@ w = 10
 
 while not done:
     pygame.display.update()
+    
 
     events = pygame.event.get()
     for event in events:

@@ -50,6 +50,10 @@ while not done:
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.QUIT:
+            try:
+                os.remove("song.wav")
+            except:
+                pass
             quit()
 
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -115,9 +119,11 @@ while not done:
 
 
         
-            
+          
 pygame.quit()
 
+
+            
 file_name = input("filename: ")
 directory = input("directory: ")
 audio.save_wav(file_name, directory)

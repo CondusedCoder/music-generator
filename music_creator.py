@@ -9,8 +9,9 @@ screen = pygame.display.set_mode((1000, 100))
 pygame.display.set_caption("music creator")
 icon = pygame.image.load("D:\Coding Files\python projects\music creator\images\icon.png")
 pygame.display.set_icon(icon)
-screen.fill([20,20,20])
+
 audio = sound.Sound()
+notes = []
 
 
 done = False
@@ -19,7 +20,7 @@ w = 10
 
 while not done:
     pygame.display.update()
-    
+    screen.fill([20,20,20])
 
     events = pygame.event.get()
     for event in events:
@@ -27,18 +28,42 @@ while not done:
             quit()
 
         if event.type == pygame.MOUSEBUTTONDOWN:
-            _, mouse_y = pygame.mouse.get_pos()
-            pygame.draw.rect(screen, (200,255,255), [x, mouse_y, w, 5])
-            x += w
-            audio.append_sinewav(mouse_y*10, 100, 1)
-            audio.append_silence(100)
-        if event.type == pygame.KEYDOWN:
+            if event.button == 1:
 
+                _, mouse_y = pygame.mouse.get_pos()
+                notes.append([x, mouse_y, w, 5])
+
+                x += w
+                
+            if event.button == 3:
+                _ = notes.pop()
+                x -= w
+                
+
+                
+
+            
+                
+
+        if event.type == pygame.KEYDOWN:
+            
             if event.key == pygame.K_SPACE:
+                for n in reversed(notes):
+
+                    audio.append_sinewav(n[1]*10, 100, 1)
+                    audio.append_silence(100)
+
                 done = True
-                pygame.quit()
                 
+
                 
+    for n in notes:
+        pygame.draw.rect(screen, (200,255,255), n)
+
+
+        
+            
+pygame.quit()
 
 file_name = input("filename: ")
 directory = input("directory: ")

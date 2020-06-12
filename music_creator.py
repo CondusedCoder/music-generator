@@ -71,14 +71,14 @@ while not done:
     for event in events:
         if event.type == pygame.QUIT:
             try:
-                os.remove("playing the song")
+                os.remove("playing_the_song.wav")
             except:
                 pass
             quit()
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             try:
-                os.remove("song.wav")
+                os.remove("playing_the_song.wav")
             except:
                 pass
 
@@ -101,7 +101,7 @@ while not done:
        
         if event.type == pygame.KEYDOWN:
             try:
-                os.remove("song.wav")
+                os.remove("playing_the_song.wav")
             except:
                 pass
             
@@ -121,8 +121,8 @@ while not done:
                     audio.append_sinewav(mapp(n[1],0,100,100,0)*10, 100, 1)
                     audio.append_silence(100)
                 
-                audio.save_wav("playing the song.wav", str(os.getcwd()))
-                os.system("playing the song.wav")
+                audio.save_wav("playing_the_song.wav", str(os.getcwd()))
+                os.system("playing_the_song.wav")
             if event.key == pygame.K_d:
                 notes = []
                 x = 10

@@ -20,6 +20,8 @@ print_how_to_use()
 audio = sound.Sound()
 notes = []
 note_color = ()
+bg_color = []
+
 
 done = False
 x = 10
@@ -29,13 +31,29 @@ if custom == "y":
     r = int(input("r: "))
     g = int(input("g: "))
     b = int(input("b: "))
-    color = (r,g,b)
-else:
-    color = (200, 255, 255)
+    note_color = (r,g,b)
+if custom == "n":
 
+    note_color = (200, 255, 255)
+else:
+    quit()
+
+theme = input("light or dark theme: ")
+if theme == "light":
+    bg_color = [255,255,255]
+
+elif theme == "dark":
+    bg_color = [20,20,20]
+
+else:
+    
+
+    quit()
+    
 volume = float(input("volume(0 -> 1): "))
 if volume > 1 or volume < 0:
     volume = 1
+
 
 screen = pygame.display.set_mode((1000, 100))
 pygame.display.set_caption("music creator")
@@ -45,7 +63,7 @@ while not done:
     
 
     pygame.display.update()
-    screen.fill([20,20,20])
+    screen.fill(bg_color)
 
     events = pygame.event.get()
     for event in events:
@@ -114,7 +132,7 @@ while not done:
 
                 
     for n in notes:
-        pygame.draw.rect(screen, color, n)
+        pygame.draw.rect(screen, note_color, n)
 
 
 

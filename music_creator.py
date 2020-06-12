@@ -32,7 +32,7 @@ if custom == "y":
     g = int(input("g: "))
     b = int(input("b: "))
     note_color = (r,g,b)
-if custom == "n":
+elif custom == "n":
 
     note_color = (200, 255, 255)
 else:
@@ -40,7 +40,7 @@ else:
 
 theme = input("light or dark theme: ")
 if theme == "light":
-    bg_color = [255,255,255]
+    bg_color = [200, 200, 200]
 
 elif theme == "dark":
     bg_color = [20,20,20]

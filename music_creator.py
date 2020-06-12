@@ -41,6 +41,8 @@ else:
 theme = input("light or dark theme: ")
 if theme == "light":
     bg_color = [200, 200, 200]
+    if custom == "n":
+        note_color = (255, 100, 100)
 
 elif theme == "dark":
     bg_color = [20,20,20]

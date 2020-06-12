@@ -43,7 +43,7 @@ if theme == "light":
     bg_color = [200, 200, 200]
     if custom == "n":
         note_color = (255, 100, 100)
-
+ 
 elif theme == "dark":
     bg_color = [20,20,20]
 
@@ -71,7 +71,7 @@ while not done:
     for event in events:
         if event.type == pygame.QUIT:
             try:
-                os.remove("song.wav")
+                os.remove("playing the song")
             except:
                 pass
             quit()
@@ -121,8 +121,8 @@ while not done:
                     audio.append_sinewav(mapp(n[1],0,100,100,0)*10, 100, 1)
                     audio.append_silence(100)
                 
-                audio.save_wav("song.wav", str(os.getcwd()))
-                os.system("song.wav")
+                audio.save_wav("playing the song.wav", str(os.getcwd()))
+                os.system("playing the song.wav")
             if event.key == pygame.K_d:
                 notes = []
                 x = 10

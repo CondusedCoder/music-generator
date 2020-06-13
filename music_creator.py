@@ -90,7 +90,8 @@ while not done:
                 x += w
                 
             if event.button == 3:
-                _ = notes.pop()
+                del notes[-1]
+
                 x -= w
                 
 
@@ -106,7 +107,7 @@ while not done:
                 pass
             
             if event.key == pygame.K_s:
-                for n in reversed(notes):
+                for n in notes:
 
                 
                     audio.append_sinewav(mapp(n[1])*10, 100, volume)
@@ -115,7 +116,7 @@ while not done:
                 done = True
                 
             if event.key == pygame.K_SPACE:
-                for n in reversed(notes):
+                for n in notes:
 
                 
                     audio.append_sinewav(mapp(n[1],0,100,100,0)*10, 100, 1)
@@ -147,4 +148,3 @@ pygame.quit()
 file_name = input("filename: ")
 directory = input("directory: ")
 audio.save_wav(file_name, directory)
-

@@ -61,6 +61,15 @@ screen = pygame.display.set_mode((1000, 100))
 pygame.display.set_caption("music creator")
 icon = pygame.image.load("D:\Coding Files\python projects\music creator\images\icon.png")
 pygame.display.set_icon(icon)
+
+def compile_song():
+    audio.sound_arr =[]
+
+    for n in notes:
+
+                
+        audio.append_sinewav(mapp(n[1],0,100,100,0)*10, 100, 1)
+        audio.append_silence(100)
 while not done:
     
 
@@ -107,20 +116,12 @@ while not done:
                 pass
             
             if event.key == pygame.K_s:
-                for n in notes:
-
-                
-                    audio.append_sinewav(mapp(n[1])*10, 100, volume)
-                    audio.append_silence(100)
+                compile_song()
 
                 done = True
                 
             if event.key == pygame.K_SPACE:
-                for n in notes:
-
-                
-                    audio.append_sinewav(mapp(n[1],0,100,100,0)*10, 100, 1)
-                    audio.append_silence(100)
+                compile_song()
                 
                 audio.save_wav("playing_the_song.wav", str(os.getcwd()))
                 os.system("playing_the_song.wav")
